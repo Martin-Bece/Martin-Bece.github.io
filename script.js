@@ -1,19 +1,24 @@
-let currentIndex = 0;
 
-function moveSlide(direction) {
-    const slides = document.querySelectorAll('.carousel-item');
-    const totalSlides = slides.length;
 
-    // Ocultar la imagen actual
-    slides[currentIndex].classList.remove('active');
+let arrayImg = ["/imgs/carrusel/1.webp", "/imgs/carrusel/2.webp", "/imgs/carrusel/3.webp"];
+let Indice = 0;
+const image = document.getElementById("imagencarrusell");
 
-    // Calcular el nuevo índice
-    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+console.log(arrayImg.length);
 
-    // Mostrar la nueva imagen
-    slides[currentIndex].classList.add('active');
-
-    // Mover el carrusel
-    const carouselInner = document.querySelector('.carousel-inner');
-    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+function moveRight(){
+    Indice ++;
+    if(Indice> (arrayImg.length -1)){
+        Indice = 0;
+    }
+    image.src = arrayImg[Indice];
 }
+
+function moveLeft(){
+    Indice--;
+    if(Indice < 0){
+        Indice = (arrayImg.length-1);
+    }
+    image.src = arrayImg[Indice];
+}
+
