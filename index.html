@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chevrolet</title>
+    <link rel="stylesheet" href="stylebase.css">
 </head>
 <body>
-    <p>Esto es la primera prueba del repositorio</p>
-    <h1>Hola mundo</h1>
+    <header>
+        <div class="cont-logoymenu">
+            <div class="cont-marca">
+                <img src="./imgs/Chevrolet-Logo-header.png" alt="logo-chevrolet">
+                <p class="titulo-logo">CHEVROLET</p>
+            </div>
+            <div class="menu-desplegable">
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Modelos</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Autos</a></li>
+                        <li><a href="#">SUVs</a></li>
+                        <li><a href="#">Pick-ups</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Concesionarios</a></li>
+                </ul>
+            </div>
+        </div>   
+    </header>   
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/imgs/carrusel/1.webp" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/imgs/carrusel/2.webp" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/imgs/carrusel/3.webp" alt="Imagen 3">
+            </div>
+        </div>
+        <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>    
+    <script src="script.js"></script>
 </body>
 </html>
