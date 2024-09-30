@@ -4,10 +4,19 @@
     box-sizing: border-box;
 }
 
+:root{
+    --color-naranja:#D1A542;
+    --color-grisclaro:#B3B3B3;
+    --color-grisoscuro:#696979;
+    --color-blanco:#E8E6E7;
+}
 
 header {
-    background-color: #000; 
+    background-color: #ffffff; 
     padding: 15px;
+    height: 15vh;
+    display: flex;
+    
 }
 
 
@@ -20,23 +29,28 @@ header {
 .cont-marca {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .cont-marca img {
-    width: 50px;
+    width: 100px;
     height: auto;
 }
 
-.titulo-logo {
-    color: white;
-    font-size: 15px;
-    margin-left: 10px;
+.titulo-logo{
+    color: var(--color-grisoscuro);
+    font-size: 15px;   
+    
 }
 
 
 .nav-links {
     list-style: none;
     display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
 }
 
 .nav-links li {
@@ -46,17 +60,19 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: var(--color-grisoscuro);
     padding: 10px 20px;
     display: block;
+    font-weight: bolder;
 }
 
 .nav-links a:hover {
-    background-color: #ffcc00; 
     color: black; 
 }
 
-
+.fa-caret-down{
+    margin-left: .5rem;
+}
 .dropdown {
     display: none;
     position: absolute;
