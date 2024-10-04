@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylebase.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <div class="cont-logoymenu">
+            <div class="cont-marca">
+                <img src="./imgs/Chevrolet-Logo-header.png" alt="logo-chevrolet">
+                <p class="titulo-logo">CHEVROLET</p>
+            </div>
+            <div class="menu-desplegable">
+                <ul class="nav-links">
+                    <li><a href="#">Vehiculos<i class="fa-solid fa-caret-down"></i></a>
+                      <ul class="dropdown">
+                        <li><a href="#">Autos</a></li>
+                        <li><a href="#">SUVs</a></li>
+                        <li><a href="#">Pick-ups</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Comprar<i class="fa-solid fa-caret-down"></i></a></li>                   
+                    <li><a href="#">Servicios<i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="#">Concesionarios</a></li>
+                    <li><a href="#">OnStar</a></li>
+                </ul>
+            </div>
+        </div>   
+    </header>   
+    
+    <div>
+        <h1>Contactate Con Nosotros</h1>
+    </div>
+    
+    <div>
+        <form action="enviar">
+            <label for="Nombre">Ingresá tu nombre: </label>
+            <input type="text" name="nombre" id="Nombre">
+            <label for="Apellido">Ingresa tu apellido:</label>
+            <input type="text" name="apellido" id="Apellido">
+            <label for="Mail">Igresá tu E-Mail:</label>
+            <input type="email" name="mail" id="Mail">
+            <label for="Teléfono">Ingresá tu celular:</label>
+            <input type="number" name="telefono" id="Teléfono">
+            <label for="Vehiculo">¿Que vehiculo te interesa?</label>
+            <input type="text" name="vehiculo" id="Vehiculo">
+        </form>
+    </div>
+
+</body>
+</html>
