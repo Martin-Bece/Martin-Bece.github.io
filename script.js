@@ -22,3 +22,5 @@ function moveLeft(){
     image.src = arrayImg[Indice];
 }
 
+setInterval(moveRight,5000);
+
