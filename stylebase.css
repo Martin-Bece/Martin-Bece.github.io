@@ -163,3 +163,32 @@ header {
 .prev-btn:hover, .next-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+
+/* MAIN */
+
+.cont-banner{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 15vw;
+    gap: 1rem;
+}
+
+.card:hover{
+    color: var(--color-naranja)
+}
+
