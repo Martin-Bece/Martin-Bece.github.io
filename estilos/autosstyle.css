@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
 }
 
 :root{
@@ -24,7 +26,7 @@ header{
     justify-content: space-between;
     width: 90%;
     height: 20vh;
-    
+    margin-bottom: 2rem;
 }
 
 main{
@@ -46,7 +48,7 @@ nav p{
 
 .card picture img{
     width: 100%;
-    height: auto; /* La imagen ocupa la mitad de la card */
+    height: auto;
     object-fit: cover;
 }
 
@@ -54,14 +56,14 @@ nav p{
     display: flex;
     flex-direction: column;
     width: 20vw;
-    border-radius: 10px; /* Bordes redondeados para dar un aspecto más suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
-    transition: transform 0.3s ease; /* Animación suave cuando se pasa el mouse */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Un ligero agrandamiento al hacer hover */
+    transform: scale(1.05); 
 }
 
 .card .info {
@@ -69,12 +71,18 @@ nav p{
     flex-direction: column;
     padding: 10px;
     gap: 0.5rem;
-    justify-content: center; /* Esto lo mantenemos para distribuir el espacio */
-    align-items: flex-start; /* Alinea el texto a la izquierda */
+    justify-content: center; 
+    align-items: flex-start; 
 }
 
 p {
     margin: 0;
+}
+
+.card h3{
+    font-weight: 200;
+    font-size: 1.4rem;
+    letter-spacing: .09rem;
 }
 
 p.precio{
@@ -85,4 +93,11 @@ p.precio{
 p.clarito{
     color: var(--color-grisclaro);
     font-size: 0.9rem;
+    font-weight: 400;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
 }
