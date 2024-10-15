@@ -75,6 +75,7 @@ header {
 .fa-caret-down{
     margin-left: .5rem;
 }
+
 .dropdown {
     display: none;
     position: absolute;

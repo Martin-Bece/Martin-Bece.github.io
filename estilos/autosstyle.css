@@ -16,18 +16,128 @@
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center ;
     height: 100%;
 }
 
-header{
+header {
+    background-color: #ffffff; 
+    padding: 15px;
+    height: 15vh;
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.cont-logoymenu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.cont-marca {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    height: 20vh;
-    margin-bottom: 2rem;
+    flex-direction: column;
 }
+
+.cont-marca img {
+    width: 100px;
+    height: auto;
+}
+
+.titulo-logo{
+    color: var(--color-grisoscuro);
+    font-size: 15px;   
+    
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.nav-links li {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-grisoscuro);
+    padding: 10px 20px;
+    display: block;
+    font-weight: bolder;
+}
+
+.nav-links a:hover {
+    color: black; 
+}
+
+.nav-volver a{
+    color: var(--color-grisoscuro);
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.nav-volver a:hover{
+    color: black;
+}
+
+.fa-caret-down{
+    margin-left: .5rem;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown li {
+    width: 200px;
+}
+
+.dropdown a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+}
+
+/*ACA TERMINA EL HEADER*/
 
 main{
     display: flex;
@@ -37,20 +147,6 @@ main{
     width: 80%;
 }
 
-.cont-logo{
-    display: flex;
-    height: 20vh;
-}
-
-nav a{
-    text-decoration: none;
-    color: black;
-    font-weight: bolder;
-}
-
-nav a:hover{
-    color: var(--color-naranja);
-}
 
 .card picture img{
     width: 100%;
