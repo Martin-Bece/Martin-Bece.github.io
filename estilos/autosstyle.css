@@ -42,8 +42,14 @@ main{
     height: 20vh;
 }
 
-nav p{
+nav a{
+    text-decoration: none;
+    color: black;
     font-weight: bolder;
+}
+
+nav a:hover{
+    color: var(--color-naranja);
 }
 
 .card picture img{

@@ -188,6 +188,7 @@ header {
     text-align: center;
     width: 15vw;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .card:hover{
