@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylebase.css">
     <title>Contacto</title>
+    <style>
+        #Contform{
+            display: flex;
+        }
+        label{
+            display: block;
+            padding: 10px;
+        }
+        input{
+            margin-left: 10px;
+        }
+        button{
+            display: block;
+            margin: 20px;
+            width: 150px;
+            height: 40px;
+        }
+
+        #ContPag{
+            background-image: url('/imgs/Chevrolet-logo.png');
+            background-size: contain; 
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        span{
+            color: red;
+            font-size: 11px;
+            display: none;
+            margin-left: 10px;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -17,38 +55,89 @@
                 <ul class="nav-links">
                     <li><a href="#">Vehiculos<i class="fa-solid fa-caret-down"></i></a>
                       <ul class="dropdown">
-                        <li><a href="#">Autos</a></li>
+                        <li><a href="./autos.html">Autos</a></li>
                         <li><a href="#">SUVs</a></li>
                         <li><a href="#">Pick-ups</a></li>
                       </ul>
-                    </li>
-                    <li><a href="#">Comprar<i class="fa-solid fa-caret-down"></i></a></li>                   
+                    </li>                                   
                     <li><a href="#">Servicios<i class="fa-solid fa-caret-down"></i></a></li>
                     <li><a href="#">Concesionarios</a></li>
-                    <li><a href="#">OnStar</a></li>
+                    <li><a href="#">Contactanos</a></li> 
                 </ul>
             </div>
         </div>   
     </header>   
     
-    <div>
-        <h1>Contactate Con Nosotros</h1>
+    <div id="ContPag">
+        <div>
+            <h1>Contactate Con Nosotros</h1>
+        </div>
+        
+        <div id="Contform">
+            <form action="" novalidate autocomplete="off" onsubmit="return validarForm()" >
+                <label for="Nombre">Ingresá tu nombre: </label>
+                <input type="text" name="nombre" id="Nombre" onfocus="limparErrores(event)"><span id="nombreError">*Nombre Invalido</span>
+                <label for="Apellido">Ingresa tu apellido:</label>
+                <input type="text" name="apellido" id="Apellido" onfocus="limparErrores(event)"><span id="apellidoError">*Apellido Invalido</span>
+                <label for="Mail">Igresá tu E-Mail:</label>
+                <input type="email" name="mail" id="Mail" onfocus="limparErrores(event)"><span id="emailError">*Email Invalido</span>
+                <label for="Teléfono">Ingresá tu celular:</label>
+                <input type="text" name="telefono" id="Teléfono" onfocus="limparErrores(event)"><span id="celularError">*Numero de celular Inválido (ejemplo: 123-1234567)</span>
+                <label for="Vehiculo">¿Que vehiculo te interesa?</label>
+                <input type="text" name="vehiculo" id="Vehiculo" onfocus="limparErrores(event)"><span id="vehiculoError">*Vehiculo Inválido</span>
+                <button>Enviar</button>
+            </form>
+        </div>
     </div>
-    
-    <div>
-        <form action="enviar">
-            <label for="Nombre">Ingresá tu nombre: </label>
-            <input type="text" name="nombre" id="Nombre">
-            <label for="Apellido">Ingresa tu apellido:</label>
-            <input type="text" name="apellido" id="Apellido">
-            <label for="Mail">Igresá tu E-Mail:</label>
-            <input type="email" name="mail" id="Mail">
-            <label for="Teléfono">Ingresá tu celular:</label>
-            <input type="number" name="telefono" id="Teléfono">
-            <label for="Vehiculo">¿Que vehiculo te interesa?</label>
-            <input type="text" name="vehiculo" id="Vehiculo">
-        </form>
-    </div>
+    <script>
 
+        function validarForm(){
+            let nombre = document.getElementById('Nombre');
+            let apellido = document.getElementById('Apellido');
+            let email = document.getElementById('Mail');
+            let telefono = document.getElementById('Teléfono');
+            let vehiculo = document.getElementById('Vehiculo');
+
+        
+            if (nombre.value.length > 12 || nombre.value == "") {
+                document.getElementById('nombreError').style.display = 'block';
+            }
+
+            if (apellido.value == "" || apellido.value.length > 15) {
+                document.getElementById('apellidoError').style.display = 'block';
+            }
+            
+            if (vehiculo.value == "") {
+                document.getElementById('vehiculoError').style.display = 'block';
+            }
+
+            let patternmail = /^[a-zA-Z0-9]+([_.][a-zA-Z0-9]+)*\@(gmail|outlook)\.(com|es)$/i;
+            
+            if (!patternmail.test(email.value) || email.value == "") {
+                document.getElementById('emailError').style.display = 'block';
+            }
+
+            let patterncelu = /^[0-9]{3}[- ]?[0-9]{7}$/;
+            
+            if(telefono.value == "" || !patterncelu.test(telefono.value)){
+                document.getElementById('celularError').style.display = 'block';
+            }
+
+            nombre.value = "";
+            apellido.value = "";
+            email.value = "";
+            telefono.value = "";
+            vehiculo.value = "";
+
+
+            return false;
+        }
+
+        function limparErrores(e){
+            let spanerror = e.target.nextSibling;
+            spanerror.style.display = 'none';
+        }
+        
+    </script>
 </body>
 </html>
