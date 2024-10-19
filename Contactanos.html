@@ -150,12 +150,12 @@
             document.getElementById("exito").style.display = 'none';
 
 
-            if (nombre.value.length > 12 || nombre.value == "") {
+            if (nombre.value.length > 50 || nombre.value == "") {
                 document.getElementById('nombreError').style.display = 'block';
                 flag= true;
             }
 
-            if (apellido.value == "" || apellido.value.length > 15) {
+            if (apellido.value == "" || apellido.value.length > 50) {
                 document.getElementById('apellidoError').style.display = 'block';
                 flag= true;
             }
@@ -165,7 +165,7 @@
                 flag= true;
             }
 
-            let patternmail = /^[a-zA-Z0-9]+([_.][a-zA-Z0-9]+)*\@(gmail|outlook)\.(com|es)$/i;
+            let patternmail = /^[a-zA-Z0-9]+([_.][a-zA-Z0-9]+)*\@(gmail|outlook|hotmail|yahoo)\.(com|es)$/i;
 
             if (!patternmail.test(email.value) || email.value == "") {
                 document.getElementById('emailError').style.display = 'block';
