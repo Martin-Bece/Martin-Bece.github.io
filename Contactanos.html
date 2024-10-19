@@ -133,6 +133,8 @@
                 <input type="text" name="vehiculo" id="Vehiculo" onfocus="limparErrores(event)"><span
                     id="vehiculoError">*Vehiculo Inválido</span>
                 <button>Enviar</button>
+
+                <p id="exito" style="display: none;">¡Listo! Formulario Enviado.</p>
             </form>
         </div>
     </div>
@@ -144,38 +146,48 @@
             let email = document.getElementById('Mail');
             let telefono = document.getElementById('Teléfono');
             let vehiculo = document.getElementById('Vehiculo');
+            let flag = false;
+            document.getElementById("exito").style.display = 'none';
 
 
             if (nombre.value.length > 12 || nombre.value == "") {
                 document.getElementById('nombreError').style.display = 'block';
+                flag= true;
             }
 
             if (apellido.value == "" || apellido.value.length > 15) {
                 document.getElementById('apellidoError').style.display = 'block';
+                flag= true;
             }
 
             if (vehiculo.value == "") {
                 document.getElementById('vehiculoError').style.display = 'block';
+                flag= true;
             }
 
             let patternmail = /^[a-zA-Z0-9]+([_.][a-zA-Z0-9]+)*\@(gmail|outlook)\.(com|es)$/i;
 
             if (!patternmail.test(email.value) || email.value == "") {
                 document.getElementById('emailError').style.display = 'block';
+                flag= true;
             }
 
             let patterncelu = /^[0-9]{3}[- ]?[0-9]{7}$/;
 
             if (telefono.value == "" || !patterncelu.test(telefono.value)) {
                 document.getElementById('celularError').style.display = 'block';
+                flag= true;
             }
 
-            nombre.value = "";
-            apellido.value = "";
-            email.value = "";
-            telefono.value = "";
-            vehiculo.value = "";
+            if (flag == false) {
+                document.getElementById("exito").style.display = 'block';
+                nombre.value = "";
+                apellido.value = "";
+                email.value = "";
+                telefono.value = "";
+                vehiculo.value = "";
 
+            }
 
             return false;
         }
