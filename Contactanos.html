@@ -1,49 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylebase.css">
     <title>Contacto</title>
     <style>
-        #Contform{
-            display: flex;
-        }
-        label{
+        label {
             display: block;
             padding: 10px;
         }
-        input{
-            margin-left: 10px;
-        }
-        button{
-            display: block;
-            margin: 20px;
-            width: 150px;
-            height: 40px;
+
+        input {
+            width: 800px; 
+            height: 40px; 
+            padding: 10px; 
+            font-size: 16px; 
         }
 
-        #ContPag{
+        #ContPag {
             background-image: url('/imgs/Chevrolet-logo.png');
-            background-size: contain; 
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            height: 100vh;
+            height: 100vh; /* Esto googlee como se hacia para que fuera modificandose en relacion al tamaño de la pantalla, como no sabia cuantos pixeles tenia. El vh lo hace "dinamico". */
             margin: 0;
-
-            align-items: center;
+            display: flex;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-        span{
+        #Contform {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            opacity: 0.9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px #00000033;
+            width: auto; 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%; 
+        }
+
+        input,
+        button {
+            width: 100%;
+            max-width: 800px; 
+        }
+
+        button {
+            align-self: center;
+            margin: 20px;
+            justify-content: center;
+            background-color: gold;
+            border: 1px solid yellow;
+            height: 35px;
+        }
+
+        button:focus {
+            background-color: darkgoldenrod;
+            border: 1px solid gold;
+        }
+
+        span {
             color: red;
             font-size: 11px;
             display: none;
             margin-left: 10px;
         }
-
     </style>
 </head>
+
 <body>
     <header>
         <div class="cont-logoymenu">
@@ -56,51 +91,61 @@
             <div class="menu-desplegable">
                 <ul class="nav-links">
                     <li><a href="#">Vehiculos<i class="fa-solid fa-caret-down"></i></a>
-                      <ul class="dropdown">
-                        <li><a href="./autos.html">Autos</a></li>
-                        <li><a href="./SUVs.html">SUVs</a></li>
-                        <li><a href="#">Pick-ups</a></li>
-                      </ul>
-                    </li>                                   
+                        <ul class="dropdown">
+                            <li><a href="./autos.html">Autos</a></li>
+                            <li><a href="./SUVs.html">SUVs</a></li>
+                            <li><a href="#">Pick-ups</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Servicios<i class="fa-solid fa-caret-down"></i></a></li>
                     <li><a href="#">Concesionarios</a></li>
-                    <li><a href="#">Contactanos</a></li> 
+                    <li><a href="#">Contactanos</a></li>
                 </ul>
             </div>
-        </div>   
-    </header>   
-    
+        </div>
+    </header>
+
     <div id="ContPag">
         <div>
-            <h1>Contactate Con Nosotros</h1>
+            <h1>Contacto</h1>
+            <p>El centro de Atención al Cliente de Chevrolet Argentina es una froma de contacto directo que nos permite
+                brindarte ayuda en el momento que lo necesitas.</p>
+            <p>Podés contactarnos llamando al 0800-888-2438, de Lunes a Viernes de 8 a 20 hs, por mail a
+                atencion.chevrolet@gm.com o completando este fromulario.</p>
+            <p>Contanos cual es tu consulta, y en breves nos comunicaremos con usted.</p>
         </div>
-        
+
         <div id="Contform">
-            <form action="" novalidate autocomplete="off" onsubmit="return validarForm()" >
+            <form action="" novalidate autocomplete="off" onsubmit="return validarForm()">
                 <label for="Nombre">Ingresá tu nombre: </label>
-                <input type="text" name="nombre" id="Nombre" onfocus="limparErrores(event)"><span id="nombreError">*Nombre Invalido</span>
+                <input type="text" name="nombre" id="Nombre" onfocus="limparErrores(event)"><span
+                    id="nombreError">*Nombre Invalido</span>
                 <label for="Apellido">Ingresa tu apellido:</label>
-                <input type="text" name="apellido" id="Apellido" onfocus="limparErrores(event)"><span id="apellidoError">*Apellido Invalido</span>
+                <input type="text" name="apellido" id="Apellido" onfocus="limparErrores(event)"><span
+                    id="apellidoError">*Apellido Invalido</span>
                 <label for="Mail">Igresá tu E-Mail:</label>
-                <input type="email" name="mail" id="Mail" onfocus="limparErrores(event)"><span id="emailError">*Email Invalido</span>
+                <input type="email" name="mail" id="Mail" onfocus="limparErrores(event)"><span id="emailError">*Email
+                    Invalido</span>
                 <label for="Teléfono">Ingresá tu celular:</label>
-                <input type="text" name="telefono" id="Teléfono" onfocus="limparErrores(event)"><span id="celularError">*Numero de celular Inválido (ejemplo: 123-1234567)</span>
+                <input type="text" name="telefono" id="Teléfono" onfocus="limparErrores(event)"><span
+                    id="celularError">*Numero de celular Inválido (ejemplo: 123-1234567)</span>
                 <label for="Vehiculo">¿Que vehiculo te interesa?</label>
-                <input type="text" name="vehiculo" id="Vehiculo" onfocus="limparErrores(event)"><span id="vehiculoError">*Vehiculo Inválido</span>
+                <input type="text" name="vehiculo" id="Vehiculo" onfocus="limparErrores(event)"><span
+                    id="vehiculoError">*Vehiculo Inválido</span>
                 <button>Enviar</button>
             </form>
         </div>
     </div>
     <script>
 
-        function validarForm(){
+        function validarForm() {
             let nombre = document.getElementById('Nombre');
             let apellido = document.getElementById('Apellido');
             let email = document.getElementById('Mail');
             let telefono = document.getElementById('Teléfono');
             let vehiculo = document.getElementById('Vehiculo');
 
-        
+
             if (nombre.value.length > 12 || nombre.value == "") {
                 document.getElementById('nombreError').style.display = 'block';
             }
@@ -108,20 +153,20 @@
             if (apellido.value == "" || apellido.value.length > 15) {
                 document.getElementById('apellidoError').style.display = 'block';
             }
-            
+
             if (vehiculo.value == "") {
                 document.getElementById('vehiculoError').style.display = 'block';
             }
 
             let patternmail = /^[a-zA-Z0-9]+([_.][a-zA-Z0-9]+)*\@(gmail|outlook)\.(com|es)$/i;
-            
+
             if (!patternmail.test(email.value) || email.value == "") {
                 document.getElementById('emailError').style.display = 'block';
             }
 
             let patterncelu = /^[0-9]{3}[- ]?[0-9]{7}$/;
-            
-            if(telefono.value == "" || !patterncelu.test(telefono.value)){
+
+            if (telefono.value == "" || !patterncelu.test(telefono.value)) {
                 document.getElementById('celularError').style.display = 'block';
             }
 
@@ -135,11 +180,12 @@
             return false;
         }
 
-        function limparErrores(e){
+        function limparErrores(e) {
             let spanerror = e.target.nextSibling;
             spanerror.style.display = 'none';
         }
-        
+
     </script>
 </body>
+
 </html>
